@@ -80,8 +80,6 @@ rm -rf test/solar_hijri_test/
 
 
 %build
-CFLAGS="$CFLAGS -fPIC"
-CXXFLAGS="$CXXFLAGS -fPIC"
 %cmake \
     -DBUILD_TZ_LIB=ON     \
     -DUSE_SYSTEM_TZ_DB=ON \
