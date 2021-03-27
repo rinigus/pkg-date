@@ -14,7 +14,7 @@ Summary:        Date and time library based on the C++11/14/17 <chrono> header
 
 License:        MIT
 URL:            https://github.com/HowardHinnant/date
-Source0:        %{url}/archive/%{commit}/%{name}-%{version}%{?gitver}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 # add pkg-config support to make the package compatible with meson
 # https://github.com/HowardHinnant/date/pull/538
 Patch0:         output-date-pc-for-pkg-config.patch
