@@ -85,15 +85,11 @@ rm -rf test/solar_hijri_test/
     -DBUILD_TZ_LIB=ON     \
     -DUSE_SYSTEM_TZ_DB=ON \
     -DENABLE_DATE_TESTING=ON
-%cmake_build
+%{__make} %{?_smp_mflags}
 
 
 %install
-%cmake_install
-
-
-%check
-%cmake_build -t testit
+%{__make} install
 
 
 %files -n libdate-tz
