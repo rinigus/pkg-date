@@ -89,7 +89,8 @@ rm -rf test/solar_hijri_test/
 
 
 %install
-%{__make} install
+%{__rm} -rf %{buildroot}
+%{__make} install DESTDIR=%{buildroot}
 
 
 %files -n libdate-tz
