@@ -49,7 +49,6 @@ the C++20 working draft.}
 %package -n     libdate-tz
 Summary:        Timezone library built on top of the date library
 Requires:       tzdata
-Obsoletes:      libtz = 2.4.1
 
 %description -n libdate-tz
 Timezone library built on top of the date library. This timezone library
@@ -81,6 +80,8 @@ rm -rf test/solar_hijri_test/
 
 
 %build
+CFLAGS="$CFLAGS -fPIC"
+CXXFLAGS="$CXXFLAGS -fPIC"
 %cmake \
     -DBUILD_TZ_LIB=ON     \
     -DUSE_SYSTEM_TZ_DB=ON \
@@ -93,17 +94,14 @@ rm -rf test/solar_hijri_test/
 %{__make} install DESTDIR=%{buildroot}
 
 
-%post -p /sbin/ldconfig
+%post -n libdate-tz -p /sbin/ldconfig
 
-%postun -p /sbin/ldconfig
+%postun -n libdate-tz -p /sbin/ldconfig
 
 %files -n libdate-tz
-%license LICENSE.txt
 %{_libdir}/libdate-tz.so.*
 
 %files devel
-%license LICENSE.txt
-%doc README.md
 %{_includedir}/%{name}/
 %{_libdir}/libdate-tz.so
 %{_libdir}/cmake/%{name}/
