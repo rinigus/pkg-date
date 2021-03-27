@@ -95,7 +95,7 @@ rm -rf test/solar_hijri_test/
 
 %files -n libdate-tz
 %license LICENSE.txt
-%{_libdir}/libdate-tz.so.%{abiver}*
+%{_libdir}/libdate-tz.so.*
 
 %files devel
 %license LICENSE.txt
