@@ -69,7 +69,8 @@ Provides:       %{name}-static = %{version}-%{release}
 %description    devel %{_description}
 
 %prep
-%autosetup -p1 -n %{name}-%{commit}
+%setup -q -n %{name}-%{version}/date
+%patch0 -p1
 # remove broken tests
 # fails due to gcc std::locale bugs (gcc#86976, HowardHinnant/date#388)
 rm -f test/date_test/parse.pass.cpp
