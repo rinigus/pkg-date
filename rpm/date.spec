@@ -93,6 +93,10 @@ rm -rf test/solar_hijri_test/
 %{__make} install DESTDIR=%{buildroot}
 
 
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
+
 %files -n libdate-tz
 %license LICENSE.txt
 %{_libdir}/libdate-tz.so.*
