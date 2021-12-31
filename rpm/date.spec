@@ -42,8 +42,11 @@ This is actually several separate C++11/C++14/C++17 libraries:
 Slightly modified versions of "date.h" and "tz.h" were voted into
 the C++20 working draft.}
 
-%description %{_description}
+%description 
+%{_description}
 
+Categories:
+  - Library
 
 # only timezone libary has binary part
 %package -n     libdate-tz
