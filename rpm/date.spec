@@ -61,6 +61,9 @@ from "date.h" and <chrono>. The IANA database also includes data on leap
 seconds, and this library provides utilities to compute with that
 information as well.
 
+PackageName: Date TZ
+Categories:
+  - Library
 
 %package        devel
 Summary:        Date and time library based on the C++11/14/17 <chrono> header
